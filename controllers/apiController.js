@@ -5,7 +5,7 @@ const async = require('async');
 
 
 exports.get_posts = function(req,res,next){
-   Post.find({},"title").populate("comments").exec(function(err,posts){
+   Post.find({}).populate("comments").exec(function(err,posts){
     if(err){return next(err)};
 
     if(posts.length<1){
